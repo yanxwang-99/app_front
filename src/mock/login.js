@@ -1,9 +1,12 @@
 const loginInfo = {
   data: {
+    id: 100000,
     username: 'admin',
-    password: '123456'
+    password: '123456',
+    token: 'hsbfcwuhgfbuywagubfu'
   },
   status: 200
+  // status: 400
 }
 const res = {
   loginInfo

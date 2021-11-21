@@ -67,8 +67,15 @@ export default {
       this.$refs.loginFormRef.validate(valid => {
         if (!valid) return
         this.$http.post('/login', this.loginForm).then(res => {
-          if (res.data.status !== 200) return console.log('登录失败')
-          console.log('登录成功')
+          const loginInfo = res.data
+          if (loginInfo.status !== 200) {
+            return this.$message.error('登录失败！')
+          }
+          this.$message.success('登录成功！')
+          // 存储token
+          window.sessionStorage.setItem('token', loginInfo.data.token)
+          // 跳转Home界面
+          this.$router.push('/home')
         }).catch(error => {
           console.log(error)
         })
