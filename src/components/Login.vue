@@ -42,7 +42,7 @@ export default {
       // 登录表单数据绑定对象
       loginForm: {
         username: 'admin',
-        password: '1234'
+        password: '123456'
       },
       // 表单验证规则对象
       loginFormRules: {
@@ -66,7 +66,12 @@ export default {
     login () {
       this.$refs.loginFormRef.validate(valid => {
         if (!valid) return
-        console.log(valid)
+        this.$http.post('/login', this.loginForm).then(res => {
+          if (res.data.status !== 200) return console.log('登录失败')
+          console.log('登录成功')
+        }).catch(error => {
+          console.log(error)
+        })
       })
     }
   }

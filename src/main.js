@@ -5,8 +5,10 @@ import './plugins/element.js'
 import './assets/custom-theme/global.css'
 
 import axios from 'axios'
-axios.defaults.baseURL = ''
+// axios.defaults.baseURL = ''
 Vue.prototype.$http = axios
+
+require('./mock/index.js')
 
 Vue.config.productionTip = false
 
