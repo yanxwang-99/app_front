@@ -14,7 +14,9 @@ import {
   MenuItemGroup,
   MenuItem,
   Tabs,
-  TabPane
+  TabPane,
+  Breadcrumb,
+  BreadcrumbItem
 } from 'element-ui'
 
 Vue.use(Button)
@@ -31,4 +33,6 @@ Vue.use(MenuItemGroup)
 Vue.use(MenuItem)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
 Vue.prototype.$message = Message

@@ -27,8 +27,7 @@
           <!-- 菜单内容 -->
           <el-menu-item v-for="item in menuList"
                         :key="item.id"
-                        :index="'/' + item.path"
-                        @click="saveNavState('/' + item.path)">
+                        :index="'/' + item.path">
             <!-- 图标 -->
             <i class="el-icon-monitor"></i>
             <!-- 文本 -->
@@ -55,7 +54,10 @@ export default {
   },
   created () {
     this.getMenuList()
-    this.activePath = window.sessionStorage.getItem('activePath')
+    this.activePath = this.$route.path
+  },
+  watch: {
+    $route: 'refreshActivePath'
   },
   methods: {
     logout () {
@@ -72,10 +74,8 @@ export default {
         // console.log(menuInfo)
       })
     },
-    // 保存链接的激活状态
-    saveNavState (activePath) {
-      window.sessionStorage.setItem('activePath', activePath)
-      // this.activePath = activePath
+    refreshActivePath () {
+      this.activePath = this.$route.path
     }
   }
 }
