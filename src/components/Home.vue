@@ -21,22 +21,25 @@
         <el-menu background-color="#333744"
                  text-color="#fff"
                  active-text-color="#409eff"
-                 unique-opened>
+                 unique-opened
+                 router
+                 :default-active="activePath">
+          <!-- 菜单内容 -->
           <el-menu-item v-for="item in menuList"
                         :key="item.id"
-                        :index="item.id.toString()">
+                        :index="'/' + item.path"
+                        @click="saveNavState('/' + item.path)">
+            <!-- 图标 -->
             <i class="el-icon-monitor"></i>
+            <!-- 文本 -->
             <span slot="title">{{item.authName}}</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
       <!-- 右侧内容主体 -->
       <el-main>
-        <el-tabs>
-          <el-tab-pane label="小系统">小系统</el-tab-pane>
-          <el-tab-pane label="大系统">大系统</el-tab-pane>
-          <el-tab-pane label="空调水系统">空调水系统系统</el-tab-pane>
-        </el-tabs>
+        <!-- 路由占位符 -->
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -46,11 +49,13 @@
 export default {
   data () {
     return {
-      menuList: []
+      menuList: [],
+      activePath: ''
     }
   },
   created () {
     this.getMenuList()
+    this.activePath = window.sessionStorage.getItem('activePath')
   },
   methods: {
     logout () {
@@ -66,6 +71,11 @@ export default {
         this.menuList = menuInfo.data
         // console.log(menuInfo)
       })
+    },
+    // 保存链接的激活状态
+    saveNavState (activePath) {
+      window.sessionStorage.setItem('activePath', activePath)
+      // this.activePath = activePath
     }
   }
 }
