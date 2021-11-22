@@ -6,6 +6,11 @@ import './assets/custom-theme/global.css'
 
 import axios from 'axios'
 // axios.defaults.baseURL = ''
+axios.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  // console.log(config)
+  return config
+})
 Vue.prototype.$http = axios
 
 require('./mock/index.js')

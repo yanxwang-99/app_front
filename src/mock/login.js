@@ -5,8 +5,10 @@ const loginInfo = {
     password: '123456',
     token: 'hsbfcwuhgfbuywagubfu'
   },
-  status: 200
-  // status: 400
+  meta: {
+    status: 200
+    // status: 400
+  }
 }
 const res = {
   loginInfo

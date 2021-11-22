@@ -1,8 +1,8 @@
 <template>
-  <div class="login_container">
-    <div class="login_box">
+  <div class="login-container">
+    <div class="login-box">
       <!-- 头像区 -->
-      <div class="avatar_box">
+      <div class="avatar-box">
         <img src="../assets/logo.png"
              alt="" />
       </div>
@@ -11,7 +11,7 @@
                :model="loginForm"
                :rules="loginFormRules"
                label-width="0px"
-               class="login_form">
+               class="login-form">
         <!-- 用户名 -->
         <el-form-item prop="username">
           <el-input v-model="loginForm.username"
@@ -68,7 +68,7 @@ export default {
         if (!valid) return
         this.$http.post('/login', this.loginForm).then(res => {
           const loginInfo = res.data
-          if (loginInfo.status !== 200) {
+          if (loginInfo.meta.status !== 200) {
             return this.$message.error('登录失败！')
           }
           this.$message.success('登录成功！')
@@ -86,12 +86,12 @@ export default {
 </script>
 
 <style scoped>
-.login_container {
+.login-container {
   background-color: #2b4b6b;
   height: 100%;
 }
 
-.login_box {
+.login-box {
   width: 450px;
   height: 300px;
   background-color: #fff;
@@ -102,7 +102,7 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.avatar_box {
+.avatar-box {
   height: 130px;
   width: 130px;
   border: 1px solid #eee;
@@ -121,7 +121,7 @@ img {
   border-radius: 50%;
   background-color: #eee;
 }
-.login_form {
+.login-form {
   position: absolute;
   bottom: 0;
   width: 100%;
