@@ -27,7 +27,8 @@
           <!-- 菜单内容 -->
           <el-menu-item v-for="item in menuList"
                         :key="item.id"
-                        :index="'/' + item.path">
+                        :index="'/' + item.path"
+                        :disabled="item.isDisabled">
             <!-- 图标 -->
             <i class="el-icon-monitor"></i>
             <!-- 文本 -->

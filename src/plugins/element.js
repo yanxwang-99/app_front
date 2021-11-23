@@ -16,7 +16,9 @@ import {
   Tabs,
   TabPane,
   Breadcrumb,
-  BreadcrumbItem
+  BreadcrumbItem,
+  Table,
+  TableColumn
 } from 'element-ui'
 
 Vue.use(Button)
@@ -35,4 +37,6 @@ Vue.use(Tabs)
 Vue.use(TabPane)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
+Vue.use(Table)
+Vue.use(TableColumn)
 Vue.prototype.$message = Message

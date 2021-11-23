@@ -3,27 +3,32 @@ const menuInfo = {
     {
       id: 1,
       authName: '刘潭站',
-      path: 'lt'
+      path: 'lt',
+      isDisabled: false
     },
     {
       id: 2,
       authName: '广石路站',
-      path: 'gsl'
+      path: 'gsl',
+      isDisabled: false
     },
     {
       id: 3,
       authName: '黄巷站',
-      path: 'hx'
+      path: 'hx',
+      isDisabled: true
     },
     {
       id: 4,
       authName: '盛岸站',
-      path: 'sa'
+      path: 'sa',
+      isDisabled: true
     },
     {
       id: 5,
       authName: '惠山古镇站',
-      path: 'hsgz'
+      path: 'hsgz',
+      isDisabled: true
     }
   ],
   meta: {

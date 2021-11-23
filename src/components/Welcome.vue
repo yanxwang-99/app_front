@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Welcome!
+      Welcome!这里是首页
     </h1>
   </div>
 </template>
