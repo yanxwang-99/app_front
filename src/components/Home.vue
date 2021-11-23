@@ -39,7 +39,7 @@
       <!-- 右侧内容主体 -->
       <el-main>
         <!-- 路由占位符 -->
-        <router-view></router-view>
+        <router-view :key="$route.fullPath"></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -72,7 +72,6 @@ export default {
           return this.$message.error(menuInfo.meta.msg)
         }
         this.menuList = menuInfo.data
-        // console.log(menuInfo)
       })
     },
     refreshActivePath () {
@@ -90,7 +89,6 @@ export default {
   background-color: #333744;
   display: flex;
   justify-content: space-between;
-  /* padding-left: 0; */
   align-items: center;
   color: #fff;
   font-size: 20px;

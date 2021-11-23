@@ -1,17 +1,17 @@
 const deviceInfo = {
   data: [
     {
-      deviceId: '2000',
+      deviceId: 'lt_2000',
       deviceName: '多联空调',
       deviceStatus: '正常'
     },
     {
-      deviceId: '2001',
+      deviceId: 'lt_2001',
       deviceName: '电动风量调节阀',
       deviceStatus: '正常'
     },
     {
-      deviceId: '2002',
+      deviceId: 'lt_2002',
       deviceName: '电动组合风阀',
       deviceStatus: '正常'
     }

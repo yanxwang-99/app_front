@@ -1,18 +1,13 @@
 const deviceInfo = {
   data: [
     {
-      deviceId: 'lt_1000',
-      deviceName: '排风机',
+      deviceId: 'gsl_4000',
+      deviceName: '射流风机',
       deviceStatus: '正常'
     },
     {
-      deviceId: 'lt_1001',
-      deviceName: '送风机',
-      deviceStatus: '正常'
-    },
-    {
-      deviceId: 'lt_1002',
-      deviceName: '排烟风机',
+      deviceId: 'gsl_4001',
+      deviceName: '排热风机',
       deviceStatus: '正常'
     }
   ],

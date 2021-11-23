@@ -31,9 +31,7 @@
 export default {
   data () {
     return {
-      breadcrumbList: [
-        '刘潭站'
-      ],
+      breadcrumbList: [],
       tableData: [],
       subSystemList: []
     }
@@ -43,11 +41,14 @@ export default {
   },
   methods: {
     getSubSystemList () {
-      this.$http.get('/station/lt/subSystem').then(res => {
+      const url = '/station' + this.$route.path + '/subSystem'
+      this.$http.get(url).then(res => {
         const subSystemInfo = res.data
         if (subSystemInfo.meta.status !== 200) {
           return this.$message.error(subSystemInfo.meta.msg)
         }
+        this.breadcrumbList = []
+        this.breadcrumbList.push(subSystemInfo.stationName)
         this.subSystemList = subSystemInfo.data
       })
     },
@@ -57,7 +58,7 @@ export default {
       this.breadcrumbList.push(tab.label)
       // 获取子系统设备信息
       const tabSelected = tab.name
-      const dataURL = '/station/lt/' + tabSelected
+      const dataURL = '/station' + this.$route.path + '/' + tabSelected
       this.$http.get(dataURL).then(res => {
         const info = res.data
         if (info.meta.status !== 200) {

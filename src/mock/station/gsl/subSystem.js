@@ -1,5 +1,5 @@
 const subSystemInfo = {
-  stationName: '刘潭站',
+  stationName: '广石路站',
   data: [
     {
       id: 1,
@@ -15,6 +15,11 @@ const subSystemInfo = {
       id: 3,
       name: 'kts',
       label: '空调水系统'
+    },
+    {
+      id: 4,
+      name: 'sdtf',
+      label: '隧道通风系统'
     }
   ],
   meta: {

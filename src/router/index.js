@@ -3,8 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
-import LT from '../components/LT.vue'
-import GSL from '../components/GSL.vue'
+import STATION from '../components/Station.vue'
 
 Vue.use(VueRouter)
 
@@ -32,12 +31,12 @@ const routes = [
       {
         path: '/lt',
         name: 'LT',
-        component: LT
+        component: STATION
       },
       {
         path: '/gsl',
         name: 'GSL',
-        component: GSL
+        component: STATION
       }
     ]
   }
