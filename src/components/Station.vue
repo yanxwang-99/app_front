@@ -47,7 +47,6 @@ export default {
         if (subSystemInfo.meta.status !== 200) {
           return this.$message.error(subSystemInfo.meta.msg)
         }
-        this.breadcrumbList = []
         this.breadcrumbList.push(subSystemInfo.stationName)
         this.subSystemList = subSystemInfo.data
       })

@@ -54,6 +54,7 @@ export default {
     }
   },
   created () {
+    this.updateNotice()
     this.getMenuList()
     this.activePath = this.$route.path
   },
@@ -76,6 +77,13 @@ export default {
     },
     refreshActivePath () {
       this.activePath = this.$route.path
+    },
+    updateNotice () {
+      this.$notify.info({
+        title: '最近一次更新内容',
+        message: '车站信息页面共用一个模板',
+        duration: 0
+      })
     }
   }
 }

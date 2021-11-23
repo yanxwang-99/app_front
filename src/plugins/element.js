@@ -5,6 +5,7 @@ import {
   FormItem,
   Input,
   Message,
+  Notification,
   Container,
   Header,
   Aside,
@@ -40,3 +41,4 @@ Vue.use(BreadcrumbItem)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.prototype.$message = Message
+Vue.prototype.$notify = Notification
