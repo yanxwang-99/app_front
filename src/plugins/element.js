@@ -19,7 +19,8 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Table,
-  TableColumn
+  TableColumn,
+  Loading
 } from 'element-ui'
 
 Vue.use(Button)
@@ -40,5 +41,6 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Loading)
 Vue.prototype.$message = Message
 Vue.prototype.$notify = Notification

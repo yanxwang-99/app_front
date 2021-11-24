@@ -81,8 +81,7 @@ export default {
     updateNotice () {
       this.$notify.info({
         title: '最近一次更新内容',
-        message: '车站信息页面共用一个模板',
-        duration: 0
+        message: '子系统下的设备列表改用公共模板，并解决以加载过的数据重复加载的问题'
       })
     }
   }

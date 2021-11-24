@@ -10,29 +10,19 @@
                    :key="subSystem.id"
                    :label="subSystem.label"
                    :name="subSystem.name">
-        <el-table :data="tableData"
-                  max-height="500">
-          <el-table-column prop="deviceId"
-                           label="设备编号"
-                           width="180"></el-table-column>
-          <el-table-column prop="deviceName"
-                           label="设备名称"
-                           width="180"></el-table-column>
-          <el-table-column prop="deviceStatus"
-                           label="设备状态"
-                           width="180"></el-table-column>
-        </el-table>
+        <sub-system ref="subSystem"></sub-system>
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
+import SubSystem from '@/components/SubSystem.vue'
 export default {
+  components: { SubSystem },
   data () {
     return {
       breadcrumbList: [],
-      tableData: [],
       subSystemList: []
     }
   },
@@ -58,13 +48,7 @@ export default {
       // 获取子系统设备信息
       const tabSelected = tab.name
       const dataURL = '/station' + this.$route.path + '/' + tabSelected
-      this.$http.get(dataURL).then(res => {
-        const info = res.data
-        if (info.meta.status !== 200) {
-          return this.$message.error(info.meta.msg)
-        }
-        this.tableData = info.data
-      })
+      this.$refs.subSystem[tab.index].getDeviceInfo(dataURL)
     }
   }
 }
