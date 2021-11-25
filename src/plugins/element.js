@@ -46,3 +46,4 @@ Vue.use(Loading)
 Vue.use(Calendar)
 Vue.prototype.$message = Message
 Vue.prototype.$notify = Notification
+Vue.prototype.$loading = Loading

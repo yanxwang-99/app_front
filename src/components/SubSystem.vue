@@ -2,7 +2,7 @@
   <div>
     <el-table :data="tableData"
               :max-height="maxHeight"
-              v-loading="isLoading">
+              v-if="dataLoaded">
       <el-table-column prop="deviceId"
                        label="设备编号"
                        width="180"></el-table-column>
@@ -21,26 +21,34 @@ export default {
   data () {
     return {
       tableData: [],
-      isLoading: true,
+      dataLoaded: false,
       maxHeight: this.$getViewportSize().height - 200
     }
   },
   methods: {
     getDeviceInfo (dataURL) {
       // 判断是否加载过数据
-      if (this.tableData.length === 0) {
-        // console.log('调用了后端接口')
-        this.$http.get(dataURL).then(res => {
-          const info = res.data
-          if (!info.ret) {
-            return this.$message.error(info.content)
-          }
-          this.tableData = info.content
-          // 关闭加载动画
-          this.isLoading = false
-        }).catch(error => {
-          console.log(error)
+      if (!this.dataLoaded) {
+        const loading = this.$loading.service({
+          lock: true,
+          text: '拼命加载中',
+          spinner: 'el-icon-loading',
+          target: document.querySelector('.main-box')
         })
+        setTimeout(() => {
+          this.$http.get(dataURL).then(res => {
+            const info = res.data
+            if (!info.ret) {
+              return this.$message.error(info.content)
+            }
+            this.tableData = info.content
+            // 关闭加载动画
+            loading.close()
+            this.dataLoaded = true
+          }).catch(error => {
+            console.log(error)
+          })
+        }, 2000)
       }
     }
   }

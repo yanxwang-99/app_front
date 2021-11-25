@@ -37,7 +37,7 @@
         </el-menu>
       </el-aside>
       <!-- 右侧内容主体 -->
-      <el-main>
+      <el-main class="main-box">
         <!-- 路由占位符 -->
         <router-view :key="$route.fullPath"></router-view>
       </el-main>
