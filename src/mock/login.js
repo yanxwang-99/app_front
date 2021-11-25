@@ -1,14 +1,11 @@
 const loginInfo = {
-  data: {
+  content: {
     id: 100000,
     username: 'admin',
     password: '123456',
     token: 'hsbfcwuhgfbuywagubfu'
   },
-  meta: {
-    status: 200
-    // status: 400
-  }
+  ret: true
 }
 const res = {
   loginInfo

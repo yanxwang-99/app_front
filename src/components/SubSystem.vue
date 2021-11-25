@@ -26,16 +26,19 @@ export default {
   },
   methods: {
     getDeviceInfo (dataURL) {
+      // 判断是否加载过数据
       if (this.tableData.length === 0) {
         // console.log('调用了后端接口')
         this.$http.get(dataURL).then(res => {
           const info = res.data
-          if (info.meta.status !== 200) {
-            return this.$message.error(info.meta.msg)
+          if (!info.ret) {
+            return this.$message.error(info.content)
           }
-          this.tableData = info.data
+          this.tableData = info.content
           // 关闭加载动画
           this.isLoading = false
+        }).catch(error => {
+          console.log(error)
         })
       }
     }

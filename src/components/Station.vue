@@ -34,11 +34,13 @@ export default {
       const url = '/station' + this.$route.path + '/subSystem'
       this.$http.get(url).then(res => {
         const subSystemInfo = res.data
-        if (subSystemInfo.meta.status !== 200) {
-          return this.$message.error(subSystemInfo.meta.msg)
+        if (!subSystemInfo.ret) {
+          return this.$message.error(subSystemInfo.content)
         }
-        this.breadcrumbList.push(subSystemInfo.stationName)
-        this.subSystemList = subSystemInfo.data
+        this.breadcrumbList.push(subSystemInfo.content.stationName)
+        this.subSystemList = subSystemInfo.content.subSystemList
+      }).catch(error => {
+        console.log(error)
       })
     },
     handleClick (tab) {

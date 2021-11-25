@@ -69,10 +69,12 @@ export default {
     getMenuList () {
       this.$http.get('/menu').then(res => {
         const menuInfo = res.data
-        if (menuInfo.meta.status !== 200) {
-          return this.$message.error(menuInfo.meta.msg)
+        if (!menuInfo.ret) {
+          return this.$message.error(menuInfo.content)
         }
-        this.menuList = menuInfo.data
+        this.menuList = menuInfo.content
+      }).catch(error => {
+        console.log(error)
       })
     },
     refreshActivePath () {
@@ -81,7 +83,7 @@ export default {
     updateNotice () {
       this.$notify.info({
         title: '最近一次更新内容',
-        message: '子系统下的设备列表改用公共模板，并解决以加载过的数据重复加载的问题'
+        message: '子系统下的设备列表改用公共模板，并解决已经加载过的数据重复加载的问题'
       })
     }
   }

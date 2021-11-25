@@ -1,5 +1,5 @@
 const deviceInfo = {
-  data: [
+  content: [
     {
       deviceId: 'lt_1000',
       deviceName: '排风机',
@@ -16,10 +16,7 @@ const deviceInfo = {
       deviceStatus: '正常'
     }
   ],
-  meta: {
-    status: 200,
-    msg: '获取成功'
-  }
+  ret: true
 }
 const res = {
   deviceInfo

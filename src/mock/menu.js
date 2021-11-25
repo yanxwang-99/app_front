@@ -1,5 +1,5 @@
 const menuInfo = {
-  data: [
+  content: [
     {
       id: 1,
       authName: '刘潭站',
@@ -31,10 +31,7 @@ const menuInfo = {
       isDisabled: true
     }
   ],
-  meta: {
-    msg: '获取菜单列表成功',
-    status: 200
-  }
+  ret: true
 }
 const res = {
   menuInfo

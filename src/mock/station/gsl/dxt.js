@@ -1,5 +1,5 @@
 const deviceInfo = {
-  data: [
+  content: [
     {
       deviceId: 'gsl_2000',
       deviceName: '多联空调',
@@ -16,10 +16,7 @@ const deviceInfo = {
       deviceStatus: '正常'
     }
   ],
-  meta: {
-    status: 200,
-    msg: '获取成功'
-  }
+  ret: true
 }
 const res = {
   deviceInfo

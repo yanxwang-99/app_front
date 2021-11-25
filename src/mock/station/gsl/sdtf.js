@@ -1,5 +1,5 @@
 const deviceInfo = {
-  data: [
+  content: [
     {
       deviceId: 'gsl_4000',
       deviceName: '射流风机',
@@ -11,10 +11,7 @@ const deviceInfo = {
       deviceStatus: '正常'
     }
   ],
-  meta: {
-    status: 200,
-    msg: '获取成功'
-  }
+  ret: true
 }
 const res = {
   deviceInfo

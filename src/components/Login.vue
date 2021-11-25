@@ -68,12 +68,12 @@ export default {
         if (!valid) return
         this.$http.post('/login', this.loginForm).then(res => {
           const loginInfo = res.data
-          if (loginInfo.meta.status !== 200) {
+          if (!loginInfo.ret) {
             return this.$message.error('登录失败！')
           }
           this.$message.success('登录成功！')
           // 存储token
-          window.sessionStorage.setItem('token', loginInfo.data.token)
+          window.sessionStorage.setItem('token', loginInfo.content.token)
           // 跳转Home界面
           this.$router.push('/home')
         }).catch(error => {
