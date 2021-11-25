@@ -14,6 +14,96 @@ const deviceInfo = {
       deviceId: 'lt_1002',
       deviceName: '排烟风机',
       deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
+    },
+    {
+      deviceId: 'lt_1002',
+      deviceName: '排烟风机',
+      deviceStatus: '正常'
     }
   ],
   ret: true

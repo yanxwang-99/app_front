@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-table :data="tableData"
-              max-height="500"
+              :max-height="maxHeight"
               v-loading="isLoading">
       <el-table-column prop="deviceId"
                        label="设备编号"
@@ -21,7 +21,8 @@ export default {
   data () {
     return {
       tableData: [],
-      isLoading: true
+      isLoading: true,
+      maxHeight: this.$getViewportSize().height - 200
     }
   },
   methods: {

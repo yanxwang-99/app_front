@@ -101,6 +101,7 @@ export default {
   align-items: center;
   color: #fff;
   font-size: 20px;
+  height: 60px !important;
 }
 .home-logo-title {
   display: flex;
@@ -115,11 +116,13 @@ export default {
 }
 .el-aside {
   background-color: #333744;
+  height: calc(100vh - 60px);
 }
 .el-menu {
   border-right-width: 0;
 }
 .el-main {
   background-color: #eaedf1;
+  height: calc(100vh - 60px);
 }
 </style>

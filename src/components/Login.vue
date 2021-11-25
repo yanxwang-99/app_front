@@ -3,7 +3,7 @@
     <div class="login-box">
       <!-- 头像区 -->
       <div class="avatar-box">
-        <img src="../assets/logo.png"
+        <img src="../assets/wxmetro_logo.jpg"
              alt="" />
       </div>
       <!-- 登录表单区 -->

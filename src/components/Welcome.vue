@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h1>
-      Welcome!这里是首页
-    </h1>
+    <el-calendar v-model="value"></el-calendar>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      value: new Date()
+    }
+  }
+}
 </script>
 
 <style scoped>
