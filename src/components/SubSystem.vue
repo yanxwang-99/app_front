@@ -1,8 +1,7 @@
 <template>
   <div>
     <el-table :data="tableData"
-              :max-height="maxHeight"
-              v-if="dataLoaded">
+              :max-height="maxHeight">
       <el-table-column prop="deviceId"
                        label="设备编号"
                        width="180"></el-table-column>
@@ -22,18 +21,20 @@ export default {
     return {
       tableData: [],
       dataLoaded: false,
+      dataLoading: false,
       maxHeight: this.$getViewportSize().height - 200
     }
   },
   methods: {
-    getDeviceInfo (dataURL) {
-      // 判断是否加载过数据
-      if (!this.dataLoaded) {
+    getDeviceInfo (dataURL, index) {
+      // 判断是否加载过数据和是否正在加载数据
+      if (!this.dataLoaded && !this.dataLoading) {
+        this.dataLoading = true
         const loading = this.$loading.service({
           lock: true,
           text: '拼命加载中',
           spinner: 'el-icon-loading',
-          target: document.querySelector('.main-box')
+          target: document.querySelectorAll('.deviceInfo-box')[index]
         })
         setTimeout(() => {
           this.$http.get(dataURL).then(res => {

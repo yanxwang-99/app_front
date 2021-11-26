@@ -42,7 +42,6 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Table)
 Vue.use(TableColumn)
-Vue.use(Loading)
 Vue.use(Calendar)
 Vue.prototype.$message = Message
 Vue.prototype.$notify = Notification

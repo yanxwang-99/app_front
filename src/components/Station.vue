@@ -9,7 +9,8 @@
       <el-tab-pane v-for="subSystem in subSystemList"
                    :key="subSystem.id"
                    :label="subSystem.label"
-                   :name="subSystem.name">
+                   :name="subSystem.name"
+                   class="deviceInfo-box">
         <sub-system ref="subSystem"></sub-system>
       </el-tab-pane>
     </el-tabs>
@@ -50,7 +51,7 @@ export default {
       // 获取子系统设备信息
       const tabSelected = tab.name
       const dataURL = '/station' + this.$route.path + '/' + tabSelected
-      this.$refs.subSystem[tab.index].getDeviceInfo(dataURL)
+      this.$refs.subSystem[tab.index].getDeviceInfo(dataURL, tab.index)
     }
   }
 }
