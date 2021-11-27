@@ -83,7 +83,7 @@ export default {
     updateNotice () {
       this.$notify.info({
         title: '最近一次更新内容',
-        message: '加载动画逻辑优化'
+        message: '侧边栏滚动条隐藏'
       })
     }
   }
@@ -117,6 +117,9 @@ export default {
 .el-aside {
   background-color: #333744;
   height: calc(100vh - 60px);
+}
+.el-aside::-webkit-scrollbar {
+  display: none;
 }
 .el-menu {
   border-right-width: 0;
