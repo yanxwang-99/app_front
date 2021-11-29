@@ -1,16 +1,19 @@
 <template>
   <div>
-    <el-table :data="tableData"
+    <el-input v-model="search"
+              placeholder="输入关键词搜索"
+              prefix-icon="el-icon-search"
+              clearable></el-input>
+    <el-table :data="tableData.filter(data => !search ||
+      data.deviceName.toLowerCase().includes(search.toLowerCase()) ||
+      data.deviceId.toLowerCase().includes(search.toLowerCase()))"
               :max-height="maxHeight">
       <el-table-column prop="deviceId"
-                       label="设备编号"
-                       width="180"></el-table-column>
+                       label="设备编号"></el-table-column>
       <el-table-column prop="deviceName"
-                       label="设备名称"
-                       width="180"></el-table-column>
+                       label="设备名称"></el-table-column>
       <el-table-column prop="deviceStatus"
-                       label="设备状态"
-                       width="180"></el-table-column>
+                       label="设备状态"></el-table-column>
     </el-table>
   </div>
 </template>
@@ -20,9 +23,10 @@ export default {
   data () {
     return {
       tableData: [],
+      search: '',
       dataLoaded: false,
       dataLoading: false,
-      maxHeight: this.$getViewportSize().height - 200
+      maxHeight: this.$getViewportSize().height - 250
     }
   },
   methods: {
@@ -46,6 +50,7 @@ export default {
             // 关闭加载动画
             loading.close()
             this.dataLoaded = true
+            this.dataLoading = false
           }).catch(error => {
             console.log(error)
           })
@@ -57,4 +62,10 @@ export default {
 </script>
 
 <style scoped>
+.el-input {
+  width: 25%;
+}
+.el-table {
+  margin-top: 15px;
+}
 </style>

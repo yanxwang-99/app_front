@@ -4,6 +4,8 @@ import {
   Form,
   FormItem,
   Input,
+  Select,
+  Option,
   Message,
   Notification,
   Container,
@@ -28,6 +30,8 @@ Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
+Vue.use(Select)
+Vue.use(Option)
 Vue.use(Container)
 Vue.use(Header)
 Vue.use(Aside)
